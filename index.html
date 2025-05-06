@@ -22,6 +22,9 @@
               class="flex-1 p-2 rounded-lg bg-white/20 placeholder-white focus:outline-none"
               autocomplete="off"
             />
+            <div id="recentDropdown" class="relative w-full">
+                <ul id="recentList" class="absolute z-10 bg-white/20 w-full mt-1 rounded-lg overflow-hidden hidden"></ul>
+              </div>
             <button
               id="getWeather"
               class="bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
@@ -29,11 +32,14 @@
               Search
             </button>
             <button
-              id="useLocation"
-              class="bg-white/20 px-2 py-2 rounded-lg hover:bg-white/30 transition"
-              title="Use My Location"
-            >
-              📍
+                id="useLocation"
+                class="bg-white/20 px-3 py-2 rounded-lg hover:bg-white/30 transition"
+                title="Use My Location"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 2v2m0 16v2m10-10h-2M4 12H2m16.95-4.95l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M16.95 16.95l1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
             </button>
           </div>
       
