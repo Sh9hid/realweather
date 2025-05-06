@@ -1,4 +1,5 @@
 ## TODO:
-- Derive meaningful data from API.  
-- Design with tailwind for the app. 
+- Beautify the design with tailwind for the app. 
+- Fix location fetch button. 
+- Add humidity, pressure, etc.
 
