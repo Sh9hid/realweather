@@ -15,8 +15,6 @@ A sleek and responsive weather application offering real-time updates, 5-day for
 - Current temperature (°C/°F toggle support)
 - Weather condition descriptions
 - Wind speed and humidity
-- "Feels like" temperature (optional)
-- Sunrise and sunset times
 - Dynamic weather icons
 
 ### 📅 5-Day Forecast
