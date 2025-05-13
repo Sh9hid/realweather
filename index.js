@@ -46,10 +46,43 @@ const renderRecentCities = () => {
     recentList.classList.remove("hidden");
 };
 
-// Event listeners for recent searches
-cityInput.addEventListener("focus", renderRecentCities);
-cityInput.addEventListener("input", () => {
+// Modified event listeners
+cityInput.addEventListener("focus", () => {
     if (cityInput.value.trim() === "") renderRecentCities();
+});
+
+cityInput.addEventListener("input", () => {
+    const query = cityInput.value.trim();
+    
+    // Always hide recent list when typing
+    recentList.classList.add("hidden");
+    
+    if (query === "") {
+        renderRecentCities();
+        suggestionsBox.innerHTML = "";
+    } else {
+        if (query.length < 2) {
+            suggestionsBox.innerHTML = "";
+            return;
+        }
+
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`)
+            .then(res => res.json())
+            .then(data => {
+                suggestionsBox.innerHTML = "";
+                data.forEach(loc => {
+                    const option = document.createElement("div");
+                    option.textContent = `${loc.name}, ${loc.country}`;
+                    option.className = "px-4 py-2 hover:bg-white/30 cursor-pointer";
+                    option.addEventListener("click", () => {
+                        cityInput.value = loc.name;
+                        suggestionsBox.innerHTML = "";
+                        getWeatherByCity(loc.name);
+                    });
+                    suggestionsBox.appendChild(option);
+                });
+            });
+    }
 });
 
 document.addEventListener("click", (e) => {
@@ -58,6 +91,8 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// Rest of the code remains EXACTLY THE SAME from your previous version
+// ====================================================================
 // Weather functionality
 const getWeatherByCity = (city) => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
@@ -192,31 +227,6 @@ useLocationBtn.addEventListener("click", () => {
             alert("Unable to retrieve your location. Please allow permission.");
         }
     );
-});
-
-cityInput.addEventListener("input", () => {
-    const query = cityInput.value.trim();
-    if (query.length < 2) {
-        suggestionsBox.innerHTML = "";
-        return;
-    }
-
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`)
-        .then(res => res.json())
-        .then(data => {
-            suggestionsBox.innerHTML = "";
-            data.forEach(loc => {
-                const option = document.createElement("div");
-                option.textContent = `${loc.name}, ${loc.country}`;
-                option.className = "px-4 py-2 hover:bg-white/30 cursor-pointer";
-                option.addEventListener("click", () => {
-                    cityInput.value = loc.name;
-                    suggestionsBox.innerHTML = "";
-                    getWeatherByCity(loc.name);
-                });
-                suggestionsBox.appendChild(option);
-            });
-        });
 });
 
 // Initialize recent cities on load
