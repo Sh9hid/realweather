@@ -1,9 +1,11 @@
-# Reak Weather 🌦️  
+# Real Weather 🌦️  
 
 A sleek and responsive weather application offering real-time updates, 5-day forecasts, geolocation support, and persistent search history. Built with modern web technologies and powered by the OpenWeatherMap API.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://sh9hid.github.com/realweather)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![image](https://github.com/user-attachments/assets/240fb238-ab50-41f4-ab4d-a333af21b17e)
+
 
 ---
 
