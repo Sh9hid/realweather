@@ -3,62 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Real Weather</title>
     <script type="module" src="index.js"></script>
     <link href="src/output.css" rel="stylesheet">
 </head>
+<body class="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center justify-start p-4 text-white font-sans">
+    <div class="w-full max-w-md mt-10 bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-2xl text-white">
+        <h1 class="text-3xl font-bold text-center mb-6">Real Weather🌤️ </h1>
+        <p class="text-xl font-italic text-center mb-6">No joke. Real Weather.</p>
 
-<body>
-    <body class="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center justify-start p-4 text-white font-sans">
-  
-        <div class="w-full max-w-md mt-10 bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-2xl text-white">
-          <h1 class="text-3xl font-bold text-center mb-6">Real Weather🌤️ </h1>
-          <p class="text-xl font-italic text-center mb-6">No joke. Real Weather.</p>
 
-      
-          <div class="flex gap-2 mb-4">
-            <input
-              id="cityInput"
-              type="text"
-              placeholder="Enter city"
-              class="flex-1 p-2 rounded-lg bg-white/20 placeholder-white focus:outline-none"
-              autocomplete="off"
-            />
-            <div id="recentDropdown" class="relative w-full">
-                <ul id="recentList" class="absolute z-10 bg-white/20 w-full mt-1 rounded-lg overflow-hidden hidden"></ul>
-              </div>
+        <div class="flex gap-2 mb-4">
+            <div class="relative flex-1">
+                <input
+                    id="cityInput"
+                    type="text"
+                    placeholder="Enter city"
+                    class="w-full p-2 rounded-lg bg-white/20 placeholder-white focus:outline-none"
+                    autocomplete="off"
+                />
+                <div id="recentDropdown" class="absolute top-full left-0 w-full z-10">
+                    <ul id="recentList" class="hidden bg-white/20 mt-1 rounded-lg overflow-hidden"></ul>
+                </div>
+            </div>
             <button
-              id="getWeather"
-              class="bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
+                id="getWeather"
+                class="bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
             >
-              Search
+                Search
             </button>
             <button
                 id="useLocation"
                 class="bg-white/20 px-3 py-2 rounded-lg hover:bg-white/30 transition"
                 title="Use My Location"
-                >
+            >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M12 2v2m0 16v2m10-10h-2M4 12H2m16.95-4.95l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M16.95 16.95l1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
                 </svg>
             </button>
-          </div>
-      
-          <div id="suggestions" class="bg-white/20 rounded-lg overflow-hidden"></div>
-      
-          <div id="weatherDisplay" class="mt-6 text-center space-y-2 hidden">
+        </div>
+
+        <div id="suggestions" class="bg-white/20 rounded-lg overflow-hidden"></div>
+
+        <div id="weatherDisplay" class="mt-6 text-center space-y-2 hidden">
             <img id="weatherIcon" class="mx-auto w-20 h-20 animate-pulse" />
             <h2 id="cityName" class="text-2xl font-semibold"></h2>
             <p id="weatherDesc" class="capitalize"></p>
             <p id="temperature" class="text-4xl font-bold"></p>
-          </div>
-          <p id="windSpeed" class="text-sm"></p>
-            <p id="humidity" class="text-sm"></p>
-          <div id="forecast" class="grid grid-cols-5 gap-4 mt-4"></div>
-
         </div>
-      
-      
+        <p id="windSpeed" class="text-sm"></p>
+        <p id="humidity" class="text-sm"></p>
+        <div id="forecast" class="grid sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-6"></div>
+
+    </div>
 </body>
-</html> 
+</html>
