@@ -65,6 +65,46 @@ cd weather-app
 
 # Install dependencies
 npm install
+```
+## ⚙️ Customization
+
+- **Tailwind Styling**: Modify `tailwind.config.js`
+- **Background Gradients**: Edit `index.html`
+- **Forecast Days**: Change `slice(0, 5)` in the `renderForecast()` function
+- **Search History**: Customize the localStorage key
+- **Animation Timing**: Tweak global CSS variables or transition durations
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- HTML5 (semantic)
+- Tailwind CSS
+- Vanilla JavaScript (ES6+)
+- Web APIs (Geolocation, localStorage)
+
+### Backend/API Services
+- **OpenWeatherMap API**
+  - Current Weather
+  - 5-Day/3-Hour Forecast
+  - Geocoding
+
+### Tooling
+- npm (package manager)
+- GitHub Actions (CI/CD)
+- ESLint & Prettier
+
+---
+
+## 🤝 Contributing
+
+We welcome your contributions! Here's how you can help:
+
+1. **Fork the project**
+2. **Create a branch for your feature**:
+   ```bash
+   git checkout -b feature/your-feature-name
 
 ## TODO:
 - Beautify the design with tailwind for the app. 
