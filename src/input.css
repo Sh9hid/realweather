@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.forecast-card {
+    @apply p-4 bg-white/10 rounded-lg shadow flex flex-col items-center text-sm;
+  }
+  

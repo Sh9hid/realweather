@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+.forecast-card {
+    @apply p-4 bg-white/10 rounded-lg shadow flex flex-col items-center text-sm;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .animate-slideIn {
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  #recentList {
+  transition: all 0.2s ease-out;
+}
